@@ -24,3 +24,6 @@
    ```sh
    cd assignment_1
    go run main.go / go run .
+4. Test:
+   ```sh
+   Input: ใส่เหตุการณ์เช่น SRSSRRR
