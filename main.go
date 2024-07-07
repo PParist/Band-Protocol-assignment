@@ -22,6 +22,7 @@ func BossBabyRevenge() {
 	}
 
 	_input = strings.TrimSpace(_input)
+	_input = strings.ToUpper(_input)
 
 	//TODO: check error input
 	if len(_input) == 0 {
@@ -37,14 +38,19 @@ func BossBabyRevenge() {
 	//TODO: check shots and revenge if short shots += 1 if revenge shots -= 1
 	shots := 0
 	for _, char := range _input {
-		if char == 'S' {
+		switch char {
+		case 'S':
 			shots++
-		} else if char == 'R' {
+		case 'R':
 			if shots > 0 {
 				shots--
 			}
+		default:
+			fmt.Printf("Error Input: Invalid character %c\n", char)
+			return
 		}
 	}
+
 	if shots <= 0 {
 		fmt.Println("Good boy")
 		return
